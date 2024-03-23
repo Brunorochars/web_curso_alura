@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root { 
+    /* E preciso usar os"--" no incio do nome da variavel, para ser reconhecido pelo CSS*/
+    --cor-primaria: #000000;
+    --cor-secundaria: #f6f6f6;
+    --cor-tercearia: #22D4FD;
+    --cor-hover:#272727;
+
+    --fonte-primaria:"Krona One", sans-serif;
+    --fonte-secundaria: "Montserrat", sans-serif;
+}
+
+* {
+    margin: 0;
+    /* Tira o espacamento entre as linhas*/
+    padding: 0;
+}
+
+body {
+
+    /* height: 100vh; */
+    /* Ocupa 100% da altura do body - viewport height*/
+    box-sizing: border-box;
+    /* Nao deixa o conteudo sair do body */
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+.destaque_titulo {
+    /* Classe .destaque_titulo strong - modificara somente a cor desta classe*/
+    color: var(--cor-tercearia);
+}
+
+.cabecalho{
+    padding: 2% 0% 0% 15%;
+}
+
+.cabecalho_menu_link{
+    color:var(--cor-tercearia);
+    font-family: var(--fonte-secundaria);
+    font-weight: 600;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    
+}
+
+.cabecalho_menu{
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+
+.apresentacao {
+    /* FlexBox visa organizar os elementos de uma pagina HTML de forma dinamica  e mantendo um layout flexivel*/
+    padding: 5% 15%;
+    display: flex;
+    /* Deixa os intes na mesma linha */
+    align-items: center;
+    /* Alinha a pelo centro dos proprios itens */
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.apresentacao_conteudo {
+    width: 50% ;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /*Controla espaco entre linhas e colunas. Aceita dois valores*/
+}
+
+.apresentacao_conteudo_titulo {
+    font-size: 2.25rem;
+    font-family: var(--fonte-primaria);
+}
+
+.apresentacao_conteudo_texto {
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);
+}
+
+.apresentacao_links {
+    display: flex; /* Display flex do flex box e utilizado para posicionar elementos na tela*/
+    justify-content: space-between;
+    flex-direction: column; /* Os elemento ficam na vertical*/
+    align-items: center; /*Alinha os elementos pelo centro*/
+    gap: 32px; /* Da espacamento entre os elementos*/
+
+}
+
+.acesse_minhas_redes{
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.apresentacao_links_navegacao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border: 2px solid var(--cor-tercearia); /* Borda solida de 2 pixels na cor azul */
+    width: 50%; /* Largura */
+    text-align: center; /* Alinha o texto no centro*/
+    border-radius: 8px; /*Raio de arredondamento da borda*/
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 21.5px 0;
+    transition: all 0.5s;
+
+}
+
+.apresentacao_links_navegacao:hover{ /* Muda o backgorund color quando passar o mouse em cima do botão (Ancora)*/
+    background-color:var(--cor-hover);
+    cursor: pointer; /*Muda o cursor do mouse para uma mao, quando o cursor estiver em cima da ancora*/
+    width: 330px; /*Largura*/
+}
+
+.imagem_apresentacao{
+    width: 50%;
+}
+
+.rodape{
+    padding: 24px;
+    background-color:var(--cor-tercearia);
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--cor-primaria);
+    text-align: center;
+    /*line-height: 36px;*/
+}
+ @media(max-width: 1200px){
+
+    .cabecalho{
+        padding: 10%;        
+    }
+
+    .cabecalho_menu{
+        justify-content: center; /*Centraliza os elementos na tela*/
+    }
+
+    .apresentacao{
+        flex-direction: column-reverse; /*Troca a ordem dos elementos*/
+    }
+
+    .apresentacao_conteudo{
+        width: auto;
+    }
+
+    .imagem_apresentacao{
+        width: 75%;
+    }
+
+}
